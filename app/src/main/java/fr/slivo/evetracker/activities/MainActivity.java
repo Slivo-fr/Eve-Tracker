@@ -79,13 +79,14 @@ public class MainActivity extends AppCompatActivity {
         EveAPI api = new EveAPI();
 
         Uri openUri = intent.getData();
+
         if (openUri != null ) {
             api.setKeyId(openUri.getQueryParameter("keyID"));
             api.setvCode(openUri.getQueryParameter("vCode"));
-        }
 
-        keyIdField.setText(api.getKeyId(), TextView.BufferType.EDITABLE);
-        vCodeField.setText(api.getvCode(), TextView.BufferType.EDITABLE);
+            keyIdField.setText(api.getKeyId(), TextView.BufferType.EDITABLE);
+            vCodeField.setText(api.getvCode(), TextView.BufferType.EDITABLE);
+        }
     }
 }
 
