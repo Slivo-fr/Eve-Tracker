@@ -27,15 +27,13 @@ public class MainActivity extends AppCompatActivity {
         AlarmReceiver.setAlarm(this);
 
         // Initializing api fields
-        EditText keyIdField = (EditText)findViewById(R.id.keyId);
-        EditText vCodeField = (EditText)findViewById(R.id.vCode);
-
-        EveAPI eveAPI = StorageManager.getStoredApi(this);
-
-        keyIdField.setText(eveAPI.getKeyId(), TextView.BufferType.EDITABLE);
-        vCodeField.setText(eveAPI.getvCode(), TextView.BufferType.EDITABLE);
+        initTextFields();
 
         // Create API button
+        initButtons();
+    }
+
+    private void initButtons() {
         final Button createApi = (Button) findViewById(R.id.createApi);
         createApi.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -70,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    protected void initTextFields() {
+        EditText keyIdField = (EditText)findViewById(R.id.keyId);
+        EditText vCodeField = (EditText)findViewById(R.id.vCode);
+
+        EveAPI eveAPI = StorageManager.getStoredApi(this);
+
+        keyIdField.setText(eveAPI.getKeyId(), TextView.BufferType.EDITABLE);
+        vCodeField.setText(eveAPI.getvCode(), TextView.BufferType.EDITABLE);
+    }
+
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -89,6 +97,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
-
