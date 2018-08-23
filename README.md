@@ -1,6 +1,6 @@
-#THIS PROJET IS CURRENTLY DISCONTINUED
+# THIS PROJET IS CURRENTLY DISCONTINUED
 
-# EveTracker
+## EveTracker
 
 This app is meant to get you notified about your Eve Online characters.
 
